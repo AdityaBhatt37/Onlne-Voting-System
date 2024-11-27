@@ -20,7 +20,7 @@ if($update_votes and $update_user_status){
     echo '
     <script>
 
-        alert("Voting Successfull!);
+        alert("Voting Successfull!");
         window.location = "../routes/dashboard.php";
     </script>
 '; 
