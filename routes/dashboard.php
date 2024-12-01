@@ -22,6 +22,8 @@
     }
 ?>
 
+<!--This is html file for dashboard page -->
+
 <html>
     <head>
         <title>Online Voting system - Dashboard </title>
