@@ -1,0 +1,140 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('background.png'); /* Replace 'background.png' with the correct path to your image */
+    background-size: cover; /* Ensures the background image covers the container */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat;
+}
+
+/* Background container with image */
+.background-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: rgba(0, 0, 0, 0.714);
+   /* Prevents the image from repeating */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+}
+
+/* Header Section */
+#headerSection h1 {
+    font-size: 2em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+#headerSection hr {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* Body Section */
+#bodySection form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#bodySection h2 {
+    font-size: 1.5em;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+input[type="number"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #000000;
+}
+
+/* Button */
+#loginbtn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+#loginbtn:hover {
+    background-color: #45a049;
+}
+
+/* Link */
+a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .background-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #headerSection h1 {
+        font-size: 1.8em;
+    }
+
+    #bodySection h2 {
+        font-size: 1.3em;
+    }
+
+    input[type="number"],
+    input[type="password"],
+    select {
+        font-size: 0.9em;
+    }
+
+    #loginbtn {
+        font-size: 1em;
+    }
+}
+
+/* Remove number input spinner (counter) */
+input[type="number"] {
+    -moz-appearance: textfield; /* For Firefox */
+    appearance: textfield; /* For Chrome, Safari, Edge */
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+p{
+    color:white;
+}

@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-image: url('register.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Background container styling */
+.background-container {
+    width: 90%; /* Allow some margin on the sides */
+    height: 90%; /* Take 90% of the viewport height */
+    max-width: 500px;
+    background-color: rgba(0, 0, 0, 0.338);
+    max-height: 700px; /* Limit height to avoid oversized containers */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.608);
+    padding: 30px;
+    text-align: center;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+/* Header Section */
+#headerSection h1 {
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#headerSection hr {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* Body Section */
+#bodySection form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ensure the form is vertically centered */
+    overflow-y: auto;
+}
+
+#bodySection h2 {
+    font-size: 1.5em;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="number"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+}
+
+/* File Upload */
+#imagepart {
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#imagepart input {
+    width: 100%;
+}
+
+/* Role Select */
+#role select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Register Button */
+#registerbtn {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+#registerbtn:hover {
+    background-color: #2980b9;
+}
+
+/* Link */
+a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .background-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #headerSection h1 {
+        font-size: 1.8em;
+    }
+
+    #bodySection h2 {
+        font-size: 1.3em;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    select {
+        font-size: 0.9em;
+    }
+
+    #registerbtn {
+        font-size: 1em;
+    }
+}
+
+/* Remove number input spinner (counter) */
+input[type="number"] {
+    -moz-appearance: textfield; /* For Firefox */
+    appearance: textfield; /* For Chrome, Safari, Edge */
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Remove the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+/* Optionally, hide the scrollbar entirely */
+::-webkit-scrollbar {
+    display: none;
+}

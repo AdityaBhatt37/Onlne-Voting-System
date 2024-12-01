@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>Online Voting System</title>
 
 </head>
@@ -15,25 +15,15 @@
 
     <!--This is login page structure-->
     <center>
-    <div id="headerSection">
-        <h1>Online Voting System</h1>
-        <hr />
-        <!--For underline -->
-    </div>
-
-    <div id="bodySection">
-        <form action="api/login.php" method="POST">
-            <h2>Login</h2>
-            <input type="number" name="mobile" placeholder="Enter mobile" /><br /><br />
-            <input type="password" name="password" placeholder="Enter password" /><br /><br />
-            <select  id="dropbox" name="role">
-                <option value="1">Voter</option>
-                <option value="2">Group</option>
-            </select><br /><br />
-            <button id="loginbtn" type="submit">Login</button><br><br>
-            New user? <a href="routes/regester.html">Register here</a>
-        </form>
-    </div>
+        <div class="background-container">
+            <div class="blur-overlay"></div>
+            <h1>Welcome to Online Voting System</h1>
+            <div class="buttons-container">
+                <a href="routes/regester.html"><button class="button">Register</button></a>
+                <a href="routes/login.html"><button class="button">Login</button></a>
+            </div>
+            <p>'We have to face the future with courage and confidence. Democracy is not a system of government. It is a way of life."<br>-Indra Gandhi</p>
+        </div>
 </center>
 </body>
 
