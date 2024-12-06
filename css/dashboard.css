@@ -1,221 +1,161 @@
-/* General Reset */
-* {
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Main Container */
 .container {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f6f9;
-    padding: 20px;
-    background-color: orange;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Header Section */
-header {
-    text-align: center;
-    margin-bottom: 30px;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.header-buttons {
+/* Header Styling */
+header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
-    width: 100%;
-}
-
-button {
-    padding: 12px 18px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 120px;
-}
-
-.back-btn, .logout-btn {
-    background-color: #4CAF50;
+    align-items: center;
+    flex-direction: column;
+    background-color: #2c3e50;
+    padding: 15px;
     color: white;
-    border: none;
 }
 
-.logout-btn {
-    background-color: #f44336;
+header h1 {
+    margin: 0;
+    font-size: 24px;
 }
-
-h1 {
-    font-size: 28px;
-    color: #ffffff;
-}
-
-/* Main Section */
-.main-section {
+header .header-buttons{
     width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+}
+header .header-buttons a {
+    text-decoration: none;
 }
 
-/* Profile Section */
-.profile {
-    background-color: white;
-    width: 50%;
+header .back-btn, header .logout-btn {
+    background-color: #1abc9c;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+header .logout-btn {
+    background-color: #e74c3c;
+}
+
+/* Main Section Styling */
+.main-section {
+    display: flex;
+    margin-top: 20px;
+}
+
+/* Left Column: Profile Section */
+.profile-section {
+    flex: 1;
+    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    position: static;
 }
 
-.profile-photo img {
-    width: 120px;
-    height: 120px;
+.profile-section .profile-photo img {
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-.profile-info h2 {
-    font-size: 22px;
-    color: #333;
-    margin-bottom: 10px;
+.profile-section .profile-info h2 {
+    font-size: 42px;
+    text-decoration: underline;
+    margin: 0 0 10px;
+}
+.profile-info{
+    padding:20px;
+    font-size: 32px;
+}
+.profile-section .profile-info p {
+    margin: 5px 0;
 }
 
-.profile-info p {
-    font-size: 16px;
-    color: #555;
-}
-
-.profile-info p strong {
-    color: #000;
-}
-
-/* Group Section (Below Profile) */
-.groups {
-    background-color: rgb(149, 228, 172);
-    width: 100%;
+/* Right Column: Groups Section */
+/* Groups Section */
+.groups-section {
+    margin-left: 30px; /* Leaves space for the fixed profile */
+    flex: 1;
+    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: calc(100vh - 100px); /* Full screen height minus header */
+    overflow-y: auto; /* Enables scrolling for this section only */
 }
 
-.groups h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
+/* Groups List: Flexbox for two cards per row */
 .groups-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);  /* 2 cards per row */
-    gap: 20px;
+    grid-template-columns: repeat(2,1fr);
+    flex-wrap: wrap; /* Ensures cards wrap to the next row */
+    gap: 20px; /* Space between cards */
+    justify-content: space-between; /* Distributes cards evenly */
 }
 
-/* Group Card */
+/* Group Card: Adjust width for two cards per row */
 .group-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #fafafa;
-    padding: 15px;
+    background-color: #f9f9f9;
+    width: calc(50% - 10px); /* Two cards per row with gap */
+    padding: 45px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px; /* Adds space between rows */
 }
 
-.group-card:hover {
-    transform: translateY(-5px);
-}
-
-.group-photo img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 20px;
-}
-
-.group-info {
-    background-color: rgba(212, 255, 0, 0.444);
-    flex-grow: 1;
-    padding: 1rem;
-    border-radius: 24px;
-}
-
-.group-info h3 {
-    font-size: 20px;
-    color: #000000;
+/* Group Photo inside Card */
+.group-card .group-photo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
     margin-bottom: 10px;
 }
 
-.group-info p {
+/* Group Info */
+.group-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.group-card p {
     font-size: 16px;
-    color: #555;
+    margin-bottom: 10px;
 }
 
-.vote-btn, .voted-btn {
-    padding: 10px 15px;
-    font-size: 14px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
+/* Buttons */
 .vote-btn {
-    background-color: #007BFF;
-    color: white;
+    background-color: #1abc9c;
     border: none;
-}
-
-.vote-btn:hover {
-    background-color: #0056b3;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .voted-btn {
-    background-color: #28a745;
-    color: white;
+    background-color: #e74c3c;
     border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: not-allowed;
+    border-radius: 5px;
 }
 
-.voted-btn:hover {
-    background-color: #218838;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .main-section {
-        align-items: center;
-    }
-
-    .profile {
-        width: 80%;
-    }
-
-    .groups {
-        width: 80%;
-    }
-
-    .groups-list {
-        grid-template-columns: 1fr;  /* 1 card per row on small screens */
-    }
-
-    .group-card {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .group-photo img {
-        margin-bottom: 10px;
-    }
-
-    .group-info {
-        text-align: center;
-    }
-}

@@ -28,17 +28,16 @@
         <!-- Header Section -->
         <header>
             <div class="header-buttons">
-                <a href="../"><button class="back-btn">Back</button></a>
+                <a href="../"><button class="back-btn">Chart</button></a>
                 <h1>Online Voting System</h1>
                 <a href="logout.php"><button class="logout-btn">Logout</button></a>
             </div>
-            
         </header>
 
-        <!-- Main Section: Profile at the top and Groups below -->
+        <!-- Main Section: Flexbox Layout -->
         <div class="main-section">
-            <!-- Profile Section (Top) -->
-            <div class="profile">
+            <!-- Left: Profile Section -->
+            <div class="profile-section">
                 <div class="profile-photo">
                     <img src="../uploads/<?php echo $userdata['photo'] ?>" alt="User Photo">
                 </div>
@@ -50,8 +49,8 @@
                 </div>
             </div>
 
-            <!-- Group Section (Below Profile) -->
-            <div class="groups">
+            <!-- Right: Groups Section -->
+            <div class="groups-section">
                 <h2>Available Groups</h2>
                 <div class="groups-list">
                     <?php

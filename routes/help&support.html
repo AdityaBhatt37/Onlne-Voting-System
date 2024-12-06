@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help and Support - Online Voting System</title>
+    <link rel="stylesheet" href="../css/help&support.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <h1>Help and Support</h1>
+            <a href="../"><button class="dashboard-btn">Back to Dashboard</button></a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- FAQs Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq">
+                <button class="faq-toggle">
+                    <h3>How do I vote?</h3>
+                </button>
+                <p class="faq-answer">Log in to your account, select your preferred group, and click the "Vote" button. Confirm your choice in the popup message.</p>
+            </div>
+            <div class="faq">
+                <button class="faq-toggle">
+                    <h3>Can I change my vote?</h3>
+                </button>
+                <p class="faq-answer">No, once you submit your vote, it cannot be changed.</p>
+            </div>
+            <div class="faq">
+                <button class="faq-toggle">
+                    <h3>What should I do if I forgot my password?</h3>
+                </button>
+                <p class="faq-answer">Click on the "Forgot Password" link on the login page. Follow the instructions to reset your password.</p>
+            </div>
+        </section>
+
+        <!-- Contact Support Section -->
+        <section class="contact-support-section">
+            <h2>Contact Support</h2>
+            <form class="support-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="issue">Describe Your Issue:</label>
+                <textarea id="issue" name="issue" rows="4" placeholder="Describe your issue..." required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- Tutorials Section -->
+        <section class="tutorials-section">
+            <h2>Tutorials</h2>
+            <div class="tutorial">
+                <h3>How to Register</h3>
+                <p>Follow our step-by-step guide to register your account and get started with voting.</p>
+                <button>Watch Tutorial</button>
+            </div>
+            <div class="tutorial">
+                <h3>How to Vote</h3>
+                <p>Learn how to cast your vote in a few simple steps.</p>
+                <button>Watch Tutorial</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Online Voting System. All rights reserved.</p>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
