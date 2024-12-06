@@ -10,39 +10,43 @@
 
 <body>
 
-    <div class="background-container">
-        <!-- Header Section -->
-        <div id="headerSection">
-            <h1>Online Voting System</h1>
-            <hr />
+    <!-- Full-width and height container -->
+    <div class="container">
+        <!-- Left section with image -->
+        <div class="image-section">
+            <img src="https://img.freepik.com/free-vector/indian-general-voting-background-political-campaign_1017-50133.jpg?t=st=1733457200~exp=1733460800~hmac=bbde327fff0acd1f0fbfea54675889ead4b1a6f33dc6e82ad54cf9db709f55db&w=900"
+                alt="Voting Background">
         </div>
 
-        <!-- Body Section with the Registration Form -->
-        <div id="bodySection">
+        <!-- Right section with registration form -->
+        <div class="form-section">
+            <h1>Online Voting System</h1>
+            <hr />
             <h2>Registration</h2>
             <form action="../api/register.php" method="POST" enctype="multipart/form-data">
-                <input type="text" name="name" placeholder="Enter name" /><br /><br />
-                <input type="number" name="mobile" placeholder="Enter mobile"  minlength="10" maxlength="10"/><br /><br />
-                <input type="password" name="password" placeholder="Enter password" /><br /><br />
-                <input type="password" name="cpassword" placeholder="Confirm password" /><br /><br />
-                <input id="address" type="text" name="address" placeholder="Enter address" /><br /><br />
+                <input type="text" name="name" placeholder="Enter name" required /><br /><br />
+                <input type="number" name="mobile" placeholder="Enter mobile" minlength="10" maxlength="10"
+                    required /><br /><br />
+                <input type="password" name="password" placeholder="Enter password" required /><br /><br />
+                <input type="password" name="cpassword" placeholder="Confirm password" required /><br /><br />
+                <input type="text" name="address" placeholder="Enter address" required /><br /><br />
 
-                <div id="imagepart">
+                <div class="file-upload">
                     Upload image: <input type="file" name="photo" required />
                 </div>
                 <br />
 
-                <div id="role">
+                <div class="role-select">
                     Select your role:
-                    <select name="role">
+                    <select name="role" required>
                         <option value="1">Voter</option>
                         <option value="2">Group</option>
-                    </select>
+                    </select><button id="registerbtn" type="submit">Register</button><br /><br />
+                      Already a user? <a href="../routes/login.html">Login here</a>
                 </div>
                 <br />
 
-                <button id="registerbtn" type="submit">Register</button><br /><br />
-                Already a user? <a href="../routes/login.html">Login here</a>
+
             </form>
         </div>
     </div>

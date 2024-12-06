@@ -1,69 +1,90 @@
+/* Resetting margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and general settings */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f7f9fc;
 }
 
+/* Full-width and height container */
 .container {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    background: #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-    max-width: 900px;
+    justify-content: space-between;
+    align-items: stretch; /* Ensure both sections fill the full height */
+    height: 100vh;
     width: 100%;
 }
 
-.content {
+/* Left section with image */
+.image-section {
     flex: 1;
-    padding: 20px;
+    height: 100%; /* Make sure it takes full height */
+    overflow: hidden; /* Hide any overflow if image is bigger */
 }
 
-.content h2 {
+.image-section img {
+    width: 100%; /* Ensure image fills width */
+    height: 100%; /* Ensure image fills height */
+    object-fit: cover; /* Ensure image covers the entire left section */
+}
+
+/* Right section with content */
+.content-section {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     color: #3d5af1;
-    margin: 0;
-    font-size: 24px;
+    height: 100%; /* Ensure full height */
 }
 
-.content h3 {
-    margin: 10px 0;
-    font-size: 20px;
+.content-section h1 {
+    font-size: 48px;
+    color: #3d5af1;
+    margin-bottom: 20px;
 }
 
-.content p {
-    color: #6b6b6b;
-    margin: 10px 0 20px;
+.content-section p {
+    color: #555;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
 
-.content button {
+.content-section button {
     background-color: #3d5af1;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 30px;
+    font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    margin-bottom: 20px;
 }
 
-.content button:hover {
+.content-section button:hover {
     background-color: #2a49c8;
 }
 
-.illustration {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
+.content-section a {
+    color: #3d5af1;
+    text-decoration: none;
 }
 
-.illustration img {
-    max-width: 100%;
-    height: auto;
+.content-section a:hover {
+    text-decoration: underline;
 }

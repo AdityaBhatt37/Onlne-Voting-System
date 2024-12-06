@@ -1,140 +1,117 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body styling */
+/* Set body to have full height, no margin */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('background.png'); /* Replace 'background.png' with the correct path to your image */
-    background-size: cover; /* Ensures the background image covers the container */
-    background-position: center; /* Centers the background image */
-    background-repeat: no-repeat;
 }
 
-/* Background container with image */
-.background-container {
+/* Main container with flex layout */
+.container {
+    display: flex;
+    max-width: 1000px; /* Maximum width for the container */
     width: 100%;
-    max-width: 500px;
-    background-color: rgba(0, 0, 0, 0.714);
-   /* Prevents the image from repeating */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    text-align: center;
+    height: 80vh;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
-/* Header Section */
+/* Left side for the image */
+.illustration {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.illustration img {
+    max-width: 80%; /* Ensure image fits properly */
+    height: auto;
+}
+
+/* Right side for the form */
+.form-container {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #headerSection h1 {
-    font-size: 2em;
-    color: #ffffff;
-    margin-bottom: 10px;
+    color: rgb(61, 90, 241);
+    margin: 0;
+    font-size: 30px;
 }
 
 #headerSection hr {
-    border: 0;
-    height: 1px;
-    background-color: #ddd;
-    margin-bottom: 20px;
+    width: 50%;
+    margin-top: 10px;
 }
 
-/* Body Section */
-#bodySection form {
+#bodySection {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 #bodySection h2 {
-    font-size: 1.5em;
-    color: #007bff;
+    color: #3d5af1;
     margin-bottom: 20px;
+    font-size: 24px;
 }
 
-/* Input Fields */
-input[type="number"],
-input[type="password"],
-select {
+#bodySection input,
+#bodySection select,
+#bodySection button {
     width: 100%;
     padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
+    margin: 10px 0;
     border-radius: 5px;
-    font-size: 1em;
-    color: #000000;
+    border: 1px solid #ccc;
+    font-size: 16px;
 }
 
-/* Button */
-#loginbtn {
-    width: 100%;
-    padding: 12px;
-    background-color: #4CAF50;
+#bodySection input:focus,
+#bodySection select:focus,
+#bodySection button:focus {
+    outline: none;
+    border-color: #3d5af1;
+}
+
+#bodySection button {
+    background-color: #3d5af1;
     color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
     cursor: pointer;
-}
-
-#loginbtn:hover {
-    background-color: #45a049;
-}
-
-/* Link */
-a {
-    text-decoration: none;
-    color: #007bff;
     font-weight: bold;
 }
 
-a:hover {
+#bodySection button:hover {
+    background-color: #2a49c8;
+}
+
+#bodySection a {
+    color: #3d5af1;
+    text-decoration: none;
+}
+
+#bodySection a:hover {
     text-decoration: underline;
 }
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    .background-container {
-        width: 90%;
-        padding: 20px;
-    }
-
-    #headerSection h1 {
-        font-size: 1.8em;
-    }
-
-    #bodySection h2 {
-        font-size: 1.3em;
-    }
-
-    input[type="number"],
-    input[type="password"],
-    select {
-        font-size: 0.9em;
-    }
-
-    #loginbtn {
-        font-size: 1em;
-    }
-}
-
-/* Remove number input spinner (counter) */
-input[type="number"] {
-    -moz-appearance: textfield; /* For Firefox */
-    appearance: textfield; /* For Chrome, Safari, Edge */
-}
-
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-p{
-    color:white;
+
+input[type="number"] {
+    -moz-appearance: textfield; /* For Firefox */
 }
