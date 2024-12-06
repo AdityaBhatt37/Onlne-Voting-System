@@ -1,38 +1,31 @@
-<!--LOGIN PAGE-->
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <title>Online Voting System</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
-
 <body>
-    <center>
-    <div id="headerSection">
-        <h1>Online Voting System</h1>
-        <hr />
-        <!--Fior underline -->
+
+    <!-- Full-width and height container -->
+    <div class="container">
+        <!-- Left side with image -->
+        <div class="image-section">
+            <img src="https://img.freepik.com/free-vector/indian-general-voting-background-political-campaign_1017-50133.jpg?t=st=1733457200~exp=1733460800~hmac=bbde327fff0acd1f0fbfea54675889ead4b1a6f33dc6e82ad54cf9db709f55db&w=900" alt="Voting Background">
+        </div>
+
+        <!-- Right side with content -->
+        <div class="content-section">
+            <h1>Vote for Future</h1>
+            <p>Your vote is your voice! Cast your vote easily with our online voting system.</p>
+            <div>
+                <a href="./routes/login.html"><button>Login</button></a>
+                <a href="./routes/regester.html"><button>Register</button></a>
+            </div>
+            <p>Want to know more? <a href="#">Learn More</a></p>
+        </div>
     </div>
 
-    <div id="bodySection">
-        <form action="api/login.php" method="POST">
-            <h2>Login</h2>
-            <input type="number" name="mobile" placeholder="Enter mobile" /><br /><br />
-            <input type="password" name="password" placeholder="Enter password" /><br /><br />
-            <select  id="dropbox" name="role">
-                <option value="1">Voter</option>
-                <option value="2">Group</option>
-            </select><br /><br />
-            <button id="loginbtn" type="submit">Login</button><br><br>
-            New user? <a href="routes/regester.html">Register here</a>
-        </form>
-    </div>
-</center>
 </body>
-
 </html>

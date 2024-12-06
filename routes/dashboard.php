@@ -1,171 +1,97 @@
 <?php
-
     session_start();
     if(!isset($_SESSION['userdata'])){
-
-        header("loacation: ../");
+        header("location: ../");
     }
 
     $userdata = $_SESSION['userdata'];
     $groupsdata = $_SESSION['groupsdata'];
 
-
-    if($_SESSION['userdata']['status']==0){
-
+    if($_SESSION['userdata']['status'] == 0){
         $status = '<b style="color:red">Not Voted</b>';
-
-    }
-    else{
-
+    } else {
         $status = '<b style="color:green">Voted</b>';
-
     }
 ?>
 
-<html>
-    <head>
-        <title>Online Voting system - Dashboard </title>
-        <link rel="stylesheet" href="../css/stylesheet.css">
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System - Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
 <body>
 
-<style>
-    #backbtn{
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="header-buttons">
+                <a href="../"><button class="back-btn">Back</button></a>
+                <h1>Online Voting System</h1>
+                <a href="logout.php"><button class="logout-btn">Logout</button></a>
+            </div>
+            
+        </header>
 
-        padding: 5px;
-        border-radius: 5px;
-        font-size:15px;
-        background-color: blue;
-        color:white;
-        float:left;
-        margin:10px;
-    }
+        <!-- Main Section: Profile at the top and Groups below -->
+        <div class="main-section">
+            <!-- Profile Section (Top) -->
+            <div class="profile">
+                <div class="profile-photo">
+                    <img src="../uploads/<?php echo $userdata['photo'] ?>" alt="User Photo">
+                </div>
+                <div class="profile-info">
+                    <h2><?php echo $userdata['name'] ?></h2>
+                    <p><strong>Mobile:</strong> <?php echo $userdata['mobile'] ?></p>
+                    <p><strong>Address:</strong> <?php echo $userdata['address'] ?></p>
+                    <p><strong>Status:</strong> <?php echo $status ?></p>
+                </div>
+            </div>
 
-    #logoutbtn{
-
-        padding: 5px;
-        border-radius: 5px;
-        font-size:15px;
-        background-color: blue;
-        color:white;
-        float:right;
-        margin:10px;
-    }
-
-    #Profile{
-        background-color: white;
-        width: 30%;
-        padding: 20px;
-        float: left;
-        
-    }
-
-    #Group{
-
-        background-color: white;
-        width: 60%;
-        padding: 20px;
-        float: right;
-
-    }
-    #votebtn{
-        padding: 5px;
-        border-radius: 15px;
-        background-color: blue;
-        color:white;
-        font-size:15px;
-
-    }
-
-    #mainpanel{
-        padding: 10px;
-
-    }
-
-    #voted{
-        padding: 5px;
-        border-radius: 15px;
-        background-color: green;
-        color:white;
-        font-size:15px;
-
-    }
-
-
-
-
-</style>
-
-<div id="mainSection">
-    <center>
-    <div id="headerSection">
-    <a href="../"><button id="backbtn">Back</button></a>
-    <a href="logout.php"><button id="logoutbtn">Logout</button></a>
-        <h1>Online Voting System</h1>
-    </div>
-    </center>
-    <hr>
-    
-
-    <div id="mainpanel">
-    <div id="Profile">
-        <img src="../uploads/<?php echo $userdata['photo'] ?>"height="100" width="100"><br>
-        <b>Name:</b> <?php echo $userdata['name']?><br><br>
-        <b>Mobile:</b> <?php echo $userdata['mobile']?><br><br>
-        <b>Address:</b> <?php echo $userdata['address']?><br><br>
-        <b>Status:</b> <?php echo $status?><br><br>
-    </div>
-
-
-
-    <div id="Group">
-    <?php
-            if($_SESSION['groupsdata']){
-
-                for($i=0; $i<count($groupsdata); $i++){
-                    ?>
-
-                    <div>
-                        <img style="float: right;" src="../uploads/<?php echo $groupsdata[$i]['photo'] ?>" height = "100" width="100">
-                        <b>Group Name: </b> <?php echo $groupsdata[$i]['name']?></br><br>
-                        <b>Votes: </b> <?php echo $groupsdata[$i]['votes']?><br><br>
-                        <form action="../api/vote.php" method="POST">
-                            <input type="hidden" name="gvotes" value="<?php echo $groupsdata[$i]['votes'] ?>">
-                            <input type="hidden" name="gid" value="<?php echo $groupsdata[$i]['id']?>">
-                            <?php
-                                if($_SESSION['userdata']['status']==0){
-                                    ?>
-
-                                        <input type="submit" name="votebtn" value="Vote" id="votebtn">
-
-                                    <?php
-
-                                }
-                                else{
-
-                                    ?>
-                                         <input disabled type="button" name="votebtn" value="Voted" id="voted">
-                                    <?php
-                                }
-                            ?>
-                           
-                        </form>
-                    </div>
-                    <hr>
+            <!-- Group Section (Below Profile) -->
+            <div class="groups">
+                <h2>Available Groups</h2>
+                <div class="groups-list">
                     <?php
-                }
-            }
-            else{
-
-            }
-        ?>
-
+                        if($_SESSION['groupsdata']){
+                            foreach($groupsdata as $group){
+                    ?>
+                        <div class="group-card">
+                            <div class="group-photo">
+                                <img src="../uploads/<?php echo $group['photo'] ?>" alt="Group Photo">
+                            </div>
+                            <div class="group-info">
+                                <h3><?php echo $group['name'] ?></h3>
+                                <p><strong>Votes:</strong> <?php echo $group['votes'] ?></p>
+                                <form action="../api/vote.php" method="POST">
+                                    <input type="hidden" name="gvotes" value="<?php echo $group['votes'] ?>">
+                                    <input type="hidden" name="gid" value="<?php echo $group['id']?>">
+                                    <?php
+                                        if($_SESSION['userdata']['status'] == 0){
+                                    ?>
+                                            <input type="submit" name="votebtn" value="Vote" class="vote-btn">
+                                    <?php
+                                        } else {
+                                    ?>
+                                            <input type="button" name="votebtn" value="Voted" class="voted-btn" disabled>
+                                    <?php
+                                        }
+                                    ?>
+                                </form>
+                            </div>
+                        </div>
+                    <?php
+                            }
+                        } else {
+                            echo "<p>No groups available.</p>";
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
-   
-
-</div>
-
 
 </body>
 </html>

@@ -1,0 +1,129 @@
+/* Resetting margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and general settings */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Full-width and height container */
+.container {
+    display: flex;
+    flex-direction: row; /* Image on the left, form on the right */
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Left section with image */
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: sticky;
+}
+
+/* Right section with registration form */
+.form-section {
+    flex: 1;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #3d5af1;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h1 {
+    font-size: 36px;
+    color: #3d5af1;
+    margin-bottom: 20px;
+}
+
+.form-section hr {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.form-section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.form-section input, .form-section select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-section button {
+    background-color: #3d5af1;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-section button:hover {
+    background-color: #2a49c8;
+}
+
+.form-section a {
+    color: #3d5af1;
+    text-decoration: none;
+}
+
+.form-section a:hover {
+    text-decoration: underline;
+}
+
+.file-upload {
+    margin-bottom: 10px;
+}
+
+.role-select {
+    margin-bottom: 20px;
+}
+#registerbtn{
+    margin-bottom: 10px;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* For Firefox */
+}

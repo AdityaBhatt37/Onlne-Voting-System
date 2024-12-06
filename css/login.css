@@ -1,0 +1,117 @@
+/* Set body to have full height, no margin */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main container with flex layout */
+.container {
+    display: flex;
+    max-width: 1000px; /* Maximum width for the container */
+    width: 100%;
+    height: 80vh;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Left side for the image */
+.illustration {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.illustration img {
+    max-width: 80%; /* Ensure image fits properly */
+    height: auto;
+}
+
+/* Right side for the form */
+.form-container {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#headerSection h1 {
+    color: rgb(61, 90, 241);
+    margin: 0;
+    font-size: 30px;
+}
+
+#headerSection hr {
+    width: 50%;
+    margin-top: 10px;
+}
+
+#bodySection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#bodySection h2 {
+    color: #3d5af1;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+#bodySection input,
+#bodySection select,
+#bodySection button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+#bodySection input:focus,
+#bodySection select:focus,
+#bodySection button:focus {
+    outline: none;
+    border-color: #3d5af1;
+}
+
+#bodySection button {
+    background-color: #3d5af1;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#bodySection button:hover {
+    background-color: #2a49c8;
+}
+
+#bodySection a {
+    color: #3d5af1;
+    text-decoration: none;
+}
+
+#bodySection a:hover {
+    text-decoration: underline;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* For Firefox */
+}
