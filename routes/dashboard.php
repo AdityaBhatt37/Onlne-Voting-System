@@ -28,7 +28,7 @@
         <!-- Header Section -->
         <header>
             <div class="header-buttons">
-                <a href="../"><button class="back-btn">Chart</button></a>
+                <a href="../"><button class="back-btn">Back</button></a>
                 <h1>Online Voting System</h1>
                 <a href="logout.php"><button class="logout-btn">Logout</button></a>
             </div>
