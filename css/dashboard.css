@@ -70,6 +70,7 @@ header .logout-btn {
 
 #pimg{
     width: 230px;
+    height: 230px;
     object-fit: cover;
     object-position:bottom;
     border-radius: 50%;
