@@ -40,7 +40,7 @@
             <!-- Profile Section (Top) -->
             <div class="profile">
                 <div class="profile-photo">
-                    <img src="../uploads/<?php echo $userdata['photo'] ?>" alt="User Photo">
+                    <img id="pimg" src="../uploads/<?php echo $userdata['photo'] ?>" alt="User Photo">
                 </div>
                 <div class="profile-info">
                     <h2><?php echo $userdata['name'] ?></h2>
